@@ -33,5 +33,7 @@ public:
     void Calcul_iDCT(double DCT_Img[][8], int Bloc8x8[][8]);
     void quant_JPEG(double DCT_Img[][8], int Img_Quant[][8]);
     void dequant_JPEG(int Img_Quant[][8], double img_DCT[][8]);
+    double EQM(int Bloc8x8[][8]);
+    double Taux_Compression(int Bloc8x8[][8]);
 };
 #endif // CCOMPRESSION_H

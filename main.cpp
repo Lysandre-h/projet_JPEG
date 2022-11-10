@@ -38,5 +38,9 @@ int main() {
     double bloc_dequantif[taille][taille];
     c.dequant_JPEG(bloc_quantif, bloc_dequantif);
     display_bloc(bloc_dequantif);
+    double eqm = c.EQM(bloc);
+    std::cout << eqm << std::endl;
+    double taux = c.Taux_Compression(bloc);
+    std::cout << taux << std::endl;
 return 0;
 }

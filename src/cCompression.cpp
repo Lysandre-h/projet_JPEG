@@ -92,3 +92,37 @@ void cCompression::dequant_JPEG(int Img_Quant[][8], double img_DCT[][8]) {
         }
     }
 }
+double cCompression::EQM(int Bloc8x8[][8]) {
+    double DCT_img[8][8];
+    int quantif_img[8][8];
+    double dequantif_img[8][8];
+    int iDCT_img[8][8];
+    Calcul_DCT_Block(DCT_img, Bloc8x8);
+    quant_JPEG(DCT_img, quantif_img);
+    dequant_JPEG(quantif_img, dequantif_img);
+    Calcul_iDCT(dequantif_img, iDCT_img);
+
+    double eqm = 0;
+    for (unsigned u=0; u<8; u++) {
+        for (unsigned v=0; v<8; v++) {
+            eqm += (Bloc8x8[u][v] - iDCT_img[u][v]) * (Bloc8x8[u][v] - iDCT_img[u][v]);
+        }
+    }
+    return eqm / (8 * 8);
+}
+
+double cCompression::Taux_Compression(int Bloc8x8[][8]) {
+    double DCT_img[8][8];
+    int quantif_img[8][8];
+    double dequantif_img[8][8];
+    Calcul_DCT_Block(DCT_img, Bloc8x8);
+    quant_JPEG(DCT_img, quantif_img);
+    dequant_JPEG(quantif_img, dequantif_img);
+    double taux = 0;
+    for (unsigned u=0; u<8; u++) {
+        for (unsigned v=0; v<8; v++) {
+            if (dequantif_img[u][v] != 0) taux ++;
+        }
+    }
+    return 1 - (taux / (8 * 8));
+}
