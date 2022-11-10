@@ -42,5 +42,9 @@ int main() {
     std::cout << eqm << std::endl;
     double taux = c.Taux_Compression(bloc);
     std::cout << taux << std::endl;
+    std::cout << "test RLE" << std::endl;
+    int test_RLE[taille][taille];
+    c.RLE_Bloc(test_RLE);
+    display_bloc(test_RLE);
 return 0;
 }

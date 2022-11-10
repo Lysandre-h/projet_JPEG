@@ -126,3 +126,14 @@ double cCompression::Taux_Compression(int Bloc8x8[][8]) {
     }
     return 1 - (taux / (8 * 8));
 }
+
+void cCompression::RLE_Bloc(int Img_Quant[][8]) {
+    int cpt = 1;
+    for (int k=2; k<=8; k++) {
+        for (int i=0; i<k; i++) {
+            if (k%2 == 0) Img_Quant[i][k-1-i] = cpt;
+            else Img_Quant[k-1-i][i] = cpt;
+            cpt++;
+        }
+    }
+}

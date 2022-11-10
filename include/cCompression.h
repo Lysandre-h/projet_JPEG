@@ -35,5 +35,7 @@ public:
     void dequant_JPEG(int Img_Quant[][8], double img_DCT[][8]);
     double EQM(int Bloc8x8[][8]);
     double Taux_Compression(int Bloc8x8[][8]);
+    //void RLE_Bloc(int Img_Quant[][8], int DC_precedent, char *Trame);
+    void RLE_Bloc(int Img_Quant[][8]);
 };
 #endif // CCOMPRESSION_H
