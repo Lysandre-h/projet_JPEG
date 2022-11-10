@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1667474428 source:c:\users\lhillair\pratiques et outils de prog\projet_jpeg\main.cpp
+1668071190 source:c:\users\lhillair\pratiques et outils de prog\projet_jpeg\main.cpp
 	<iostream>
 	"cCompression.h"
 
-1667474711 source:c:\users\lhillair\pratiques et outils de prog\projet_jpeg\src\ccompression.cpp
+1668070929 source:c:\users\lhillair\pratiques et outils de prog\projet_jpeg\src\ccompression.cpp
 	"cCompression.h"
 	<cmath>
 
-1667474711 c:\users\lhillair\pratiques et outils de prog\projet_jpeg\include\ccompression.h
+1668074057 c:\users\lhillair\pratiques et outils de prog\projet_jpeg\include\ccompression.h
 	<cmath>
 
